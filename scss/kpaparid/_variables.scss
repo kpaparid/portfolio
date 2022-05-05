@@ -1,0 +1,556 @@
+$white: #ffffff;
+$gray-100: #eaeaea;
+$gray-200: #f5f8fb;
+$gray-300: #f0f3f6;
+$gray-400: #eaedf2;
+$gray-500: #d1d7e0;
+$gray-600: #93a5be;
+$gray-700: #66799e;
+$gray-800: #506690;
+$gray-900: #3c415c;
+$dark: #262b40;
+$black: #2e3650;
+
+$grays: (
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900,
+);
+$blue: #0948b3;
+$indigo: #4c5680;
+$purple: #8965e0;
+$pink: #c96480;
+$red: #fa5252;
+$orange: #ff9f89;
+$brown: #b9a084;
+$yellow: #f5b759;
+$yellow-alt: #fde9ca;
+$green: #05a677;
+$teal: #1e90ff;
+$cyan: #63b1bd;
+$soft-indigo: #f5e8ff;
+$soft-green: #2ca58d;
+
+$colors: (
+  "blue": $blue,
+  "indigo": $indigo,
+  "purple": $purple,
+  "pink": $pink,
+  "red": $red,
+  "orange": $orange,
+  "yellow": $yellow,
+  "green": $green,
+  "teal": $teal,
+  "cyan": $cyan,
+  "white": $white,
+  "gray": $gray-600,
+  "gray-dark": $gray-800,
+);
+
+$primary: #ff9921;
+$secondary: #090b27;
+$tertiary: #050615;
+$quaternary: #8892b0;
+$senary: #ccd6f6;
+$quinary: #5c6bc0;
+
+$inverse-primary: #fff;
+$darker-primary: #340006;
+$inverse: #0a3758;
+$gray-500: #d7e3ef;
+$light-blue: #0771d0;
+$very-light-blue: #b2d4ff;
+$darker-blue: #0771ab;
+$septenary: #9b9b9b;
+$octonary: #f7f7f7;
+$nonary: #252935;
+$darker-nonary: #090a19;
+$gray-white: #b1bac6;
+$border-gray: #2e365020;
+$mega-light-blue: #deebff;
+$dark: #01161a;
+$denary: #ffd124;
+$duodenary: #9bdcf4;
+$darker-senary: #c95848;
+$pending: #ffc24d;
+$confirmed: #f58634;
+$ready: #81b214;
+$declined: #f05945;
+$canceled: #f05945;
+
+$default: $primary;
+
+$light-tertiary: lighten($tertiary, 15%);
+$very-light-tertiary: lighten($tertiary, 25%);
+$light-senary: lighten($senary, 15%);
+$very-light-senary: lighten($senary, 20%);
+
+// Mobile landing color scheme
+$primary-app: #ebf4f6;
+$secondary-app: #424aa0;
+$success: $green;
+$info: $blue;
+$warning: $yellow;
+$danger: #ff0000;
+$gray: $gray-900;
+$light: $gray-400;
+$lighten: $gray-300;
+$soft: $gray-200;
+$dark: $dark;
+
+// // Brands colors
+$facebook: #3b5999;
+$twitter: #1da1f2;
+$google: #db4337;
+$instagram: #e4405f;
+$pinterest: #bd081c;
+$youtube: #cd201f;
+$slack: #3aaf85;
+$dribbble: #ea4c89;
+$github: #222222;
+$dropbox: #1e90ff;
+$twitch: #4b367c;
+$paypal: #ecb32c;
+$behance: #0057ff;
+$reddit: #e84422;
+
+// Brand colors
+$brand-colors: ();
+$brand-colors: map-merge(
+  (
+    "facebook": $facebook,
+    "twitter": $twitter,
+    "google": $google,
+    "instagram": $instagram,
+    "pinterest": $pinterest,
+    "youtube": $youtube,
+    "slack": $slack,
+    "dribbble": $dribbble,
+    "dropbox": $dropbox,
+    "twitch": $twitch,
+    "paypal": $paypal,
+    "behance": $behance,
+    "reddit": $reddit,
+    "github": $github,
+  ),
+  $brand-colors
+);
+
+$theme-colors: ();
+$theme-colors: map-merge(
+  (
+    "gray-white": $gray-white,
+    "primary": $primary,
+    "darker-primary": $darker-primary,
+    "inverse-primary": $inverse-primary,
+    "inverse": $inverse,
+    "secondary": $secondary,
+    "tertiary": $tertiary,
+    "ready": $ready,
+    "quaternary": $quaternary,
+    "primary-app": $primary-app,
+    "secondary-app": $secondary-app,
+    "very-light-blue": $very-light-blue,
+    "light-blue": $light-blue,
+    "light-tertiary": $light-tertiary,
+    "very-light-tertiary": $very-light-tertiary,
+    "light-senary": $light-senary,
+    "very-light-senary": $very-light-senary,
+    "quinary": $quinary,
+    "duodenary": $duodenary,
+    "senary": $senary,
+    "mega-light-blue": $mega-light-blue,
+    "septenary": $septenary,
+    "octonary": $octonary,
+    "nonary": $nonary,
+    "denary": $denary,
+    "border-gray": $border-gray,
+    "darker-nonary": $darker-nonary,
+    "darker-senary": $darker-senary,
+    "canceled": $canceled,
+    "confirmed": $confirmed,
+    "pending": $pending,
+    "declined": $declined,
+    "light": $light,
+    "lighten": $lighten,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "white": $white,
+    "gray": $gray,
+    "indigo": $indigo,
+    "dark": $dark,
+    "soft": $soft,
+    "black": $black,
+    "blue": $blue,
+    "pink": $pink,
+    "cyan": $cyan,
+    "purple": $purple,
+    "soft-indigo": $soft-indigo,
+    "soft-green": $soft-green,
+    "gray-100": $gray-100,
+    "gray-200": $gray-200,
+    "gray-300": $gray-300,
+    "gray-400": $gray-400,
+    "gray-500": $gray-500,
+    "gray-600": $gray-600,
+    "gray-700": $gray-700,
+    "gray-800": $gray-800,
+    "gray-900": $gray-900,
+    "facebook": $facebook,
+    "twitter": $twitter,
+    "google": $google,
+    "instagram": $instagram,
+    "pinterest": $pinterest,
+    "youtube": $youtube,
+    "slack": $slack,
+    "dribbble": $dribbble,
+    "dropbox": $dropbox,
+    "twitch": $twitch,
+    "paypal": $paypal,
+    "behance": $behance,
+    "reddit": $reddit,
+    "github": $github,
+  ),
+  $theme-colors
+);
+
+// Set a specific jump point for requesting color jumps
+$theme-color-interval: 8%;
+
+// The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
+// See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
+$min-contrast-ratio: 3;
+
+// Customize the light and dark text colors for use in our color contrast function.
+$color-contrast-dark: $dark;
+$color-contrast-light: $white;
+
+// fusv-disable
+$blue-100: tint-color($blue, 8);
+$blue-200: tint-color($blue, 6);
+$blue-300: tint-color($blue, 4);
+$blue-400: tint-color($blue, 2);
+$blue-500: $blue;
+$blue-600: shade-color($blue, 2);
+$blue-700: shade-color($blue, 4);
+$blue-800: shade-color($blue, 6);
+$blue-900: shade-color($blue, 8);
+
+$indigo-100: tint-color($indigo, 8);
+$indigo-200: tint-color($indigo, 6);
+$indigo-300: tint-color($indigo, 4);
+$indigo-400: tint-color($indigo, 2);
+$indigo-500: $indigo;
+$indigo-600: shade-color($indigo, 2);
+$indigo-700: shade-color($indigo, 4);
+$indigo-800: shade-color($indigo, 6);
+$indigo-900: shade-color($indigo, 8);
+
+$purple-100: tint-color($purple, 8);
+$purple-200: tint-color($purple, 6);
+$purple-300: tint-color($purple, 4);
+$purple-400: tint-color($purple, 2);
+$purple-500: $purple;
+$purple-600: shade-color($purple, 2);
+$purple-700: shade-color($purple, 4);
+$purple-800: shade-color($purple, 6);
+$purple-900: shade-color($purple, 8);
+
+$pink-100: tint-color($pink, 8);
+$pink-200: tint-color($pink, 6);
+$pink-300: tint-color($pink, 4);
+$pink-400: tint-color($pink, 2);
+$pink-500: $pink;
+$pink-600: shade-color($pink, 2);
+$pink-700: shade-color($pink, 4);
+$pink-800: shade-color($pink, 6);
+$pink-900: shade-color($pink, 8);
+
+$red-100: tint-color($red, 8);
+$red-200: tint-color($red, 6);
+$red-300: tint-color($red, 4);
+$red-400: tint-color($red, 2);
+$red-500: $red;
+$red-600: shade-color($red, 2);
+$red-700: shade-color($red, 4);
+$red-800: shade-color($red, 6);
+$red-900: shade-color($red, 8);
+
+$orange-100: tint-color($orange, 8);
+$orange-200: tint-color($orange, 6);
+$orange-300: tint-color($orange, 4);
+$orange-400: tint-color($orange, 2);
+$orange-500: $orange;
+$orange-600: shade-color($orange, 2);
+$orange-700: shade-color($orange, 4);
+$orange-800: shade-color($orange, 6);
+$orange-900: shade-color($orange, 8);
+
+$yellow-100: tint-color($yellow, 8);
+$yellow-200: tint-color($yellow, 6);
+$yellow-300: tint-color($yellow, 4);
+$yellow-400: tint-color($yellow, 2);
+$yellow-500: $yellow;
+$yellow-600: shade-color($yellow, 2);
+$yellow-700: shade-color($yellow, 4);
+$yellow-800: shade-color($yellow, 6);
+$yellow-900: shade-color($yellow, 8);
+
+$green-100: tint-color($green, 8);
+$green-200: tint-color($green, 6);
+$green-300: tint-color($green, 4);
+$green-400: tint-color($green, 2);
+$green-500: $green;
+$green-600: shade-color($green, 2);
+$green-700: shade-color($green, 4);
+$green-800: shade-color($green, 6);
+$green-900: shade-color($green, 8);
+
+$teal-100: tint-color($teal, 8);
+$teal-200: tint-color($teal, 6);
+$teal-300: tint-color($teal, 4);
+$teal-400: tint-color($teal, 2);
+$teal-500: $teal;
+$teal-600: shade-color($teal, 2);
+$teal-700: shade-color($teal, 4);
+$teal-800: shade-color($teal, 6);
+$teal-900: shade-color($teal, 8);
+
+$cyan-100: tint-color($cyan, 8);
+$cyan-200: tint-color($cyan, 6);
+$cyan-300: tint-color($cyan, 4);
+$cyan-400: tint-color($cyan, 2);
+$cyan-500: $cyan;
+$cyan-600: shade-color($cyan, 2);
+$cyan-700: shade-color($cyan, 4);
+$cyan-800: shade-color($cyan, 6);
+$cyan-900: shade-color($cyan, 8);
+// fusv-enable
+
+// Characters which are escaped by the escape-svg function
+$escaped-characters: (
+  ("<", "%3c"),
+  (">", "%3e"),
+  ("#", "%23"),
+  ("(", "%28"),
+  (")", "%29")
+);
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-caret: true;
+$enable-rounded: true;
+$enable-shadows: true;
+$enable-gradients: false;
+$enable-transitions: true;
+$enable-reduced-motion: true;
+$enable-grid-classes: true;
+$enable-button-pointers: true;
+$enable-rfs: true;
+$enable-validation-icons: true;
+$enable-negative-margins: true;
+$enable-deprecation-messages: true;
+$enable-important-utilities: true;
+$enable-smooth-scroll: false;
+
+// Gradient
+//
+// The gradient which is added to components if `$enable-gradients` is `true`
+// This gradient is also added to elements with `.bg-gradient`
+$gradient: linear-gradient(180deg, rgba($white, 0.15), rgba($white, 0));
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer / 4,
+  2: $spacer / 2,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: (
+    $spacer * 5,
+  ),
+  7: (
+    $spacer * 8,
+  ),
+  8: (
+    $spacer * 10,
+  ),
+  9: (
+    $spacer * 11,
+  ),
+  10: (
+    $spacer * 14,
+  ),
+  11: (
+    $spacer * 16,
+  ),
+  12: (
+    $spacer * 20,
+  ),
+  "sm": (
+    $spacer * 1,
+  ),
+  "md": (
+    $spacer * 2,
+  ),
+  "lg": (
+    $spacer * 4,
+  ),
+  "xl": (
+    $spacer * 8,
+  ),
+);
+
+$negative-spacers: if($enable-negative-margins, negativify-map($spacers), null);
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg: $secondary;
+$body-color: $gray-900;
+$body-text-align: null;
+
+// Links
+//
+// Style anchor elements.
+
+$link-color: $primary;
+$link-decoration: none;
+$link-hover-color: darken($link-color, 15%);
+$link-hover-decoration: null;
+// Darken percentage for links with `.text-*` class (e.g. `.text-success`)
+$emphasized-link-hover-darken-percentage: 15%;
+
+$stretched-link-pseudo-element: after;
+$stretched-link-z-index: 1;
+
+// Paragraphs
+//
+// Style p element.
+
+$paragraph-margin-bottom: 1rem;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+// scss-docs-start grid-breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 461px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+// scss-docs-end grid-breakpoints
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+// scss-docs-start container-max-widths
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px,
+);
+// scss-docs-end container-max-widths
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns: 12;
+$grid-gutter-width: 1.5rem;
+$grid-row-columns: 6;
+
+$gutters: $spacers;
+
+// Container padding
+
+$container-padding-x: 2rem;
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// font awesome
+$fontawesome-webfonts-path: "../vendor/font-awesome/webfonts";
+$font-awesome-5: "Font Awesome 5 Free";
+
+// stylelint-disable value-keyword-case
+// $font-family-sans-serif: "Nunito Sans", sans-serif;
+
+$font-family-sans-serif: Averta, -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Roboto, "Helvetica Neue", Arial, sans-serif;
+// stylelint-enable value-keyword-case
+// $font-family-base: var(--bs-font-sans-serif);
+$font-family-base: $font-family-sans-serif;
+$font-family-code: var(--bs-font-monospace);
+
+// $font-size-root effects the value of `rem`, which is used for as well font sizes, paddings and margins
+// $font-size-base effects the font size of the body text
+$font-size-root: null;
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+$font-size-xs: ($font-size-base * 0.75);
+$font-size-sm: ($font-size-base * 0.875);
+$font-size-md: ($font-size-base * 1);
+$font-size-lg: ($font-size-base * 1.125);
+$font-size-xl: ($font-size-base * 1.25);
+$font-size-xxl: ($font-size-base * 1.5);
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 600;
+$font-weight-bolder: 700;
+$font-weight-extreme: 800;
+
+$font-weight-base: $font-weight-normal;
+
+$line-height-base: 1.5;
+$line-height-sm: 1.25;
+$line-height-lg: 2;
+
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;
+
+$headings-margin-bottom: $spacer / 2;
+$headings-font-family: null;
+$headings-font-style: null;
+$headings-font-weight: $font-weight-bold;
+$headings-line-height: 1.3;
+$headings-color: $dark;

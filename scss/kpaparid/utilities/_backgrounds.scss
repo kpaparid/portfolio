@@ -1,0 +1,10 @@
+/**
+ * = Backgrounds
+*/
+.body {
+  -webkit-scroll-behavior: auto !important;
+  scroll-behavior: auto !important;
+}
+@each $color, $value in $theme-colors {
+  @include btn-variant(".btn-#{$color}", $value);
+}

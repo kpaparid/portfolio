@@ -1,0 +1,42 @@
+@mixin btn-variant($parent, $color) {
+  #{$parent} {
+    background-color: $color;
+    &:hover {
+      background-color: lighten($color, 5%) !important;
+      border-color: lighten($color, 5%) !important;
+      // background-color: darken($color, 20%) !important;
+      // border-color: darken($color, 20%) !important;
+    }
+    &:focus {
+      background-color: lighten($color, 5%) !important;
+      border-color: lighten($color, 5%) !important;
+      box-shadow: inset 0 1px 0 rgb(255 255 255 / 15%),
+        0 1px 1px rgb(46 54 80 / 8%), 0 0 0 0.08rem rgb($color, 50%);
+    }
+    &.hover-none {
+      &:hover,
+      &:focus {
+        background-color: $color !important;
+        border-color: $color !important;
+      }
+    }
+  }
+}
+
+@mixin bg-variant($parent, $color) {
+  #{$parent} {
+    background-color: $color;
+  }
+  a#{$parent},
+  button#{$parent} {
+    @include hover-focus {
+      background-color: lighten($color, 100%) !important;
+    }
+  }
+}
+
+@mixin background-image($background-repeat, $background-size) {
+  background-repeat: $background-repeat;
+  background-position: top center;
+  background-size: $background-size;
+}
