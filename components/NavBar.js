@@ -4,16 +4,57 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Logo from "./Logo";
 import PreLoader from "./Preloader";
 import { Button, Dropdown, Modal } from "react-bootstrap";
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 
+const NavBar = forwardRef((_, ref) => {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  return (
+    <TopBar ref={ref} className="show">
+      <Logo />
+      <NavWrapper>
+        <Nav>About</Nav>
+        <Nav>Experience</Nav>
+        <Nav>Work</Nav>
+        <Nav>Contact</Nav>
+      </NavWrapper>
+      <NavModalToggle variant="transparent" onClick={handleShow}>
+        <FontAwesomeIcon className="text-primary" icon={faBars} />
+      </NavModalToggle>
+      <NavModal className="hi" show={show} onHide={handleClose}>
+        <Nav>About</Nav>
+        <Nav>Experience</Nav>
+        <Nav>Work</Nav>
+        <Nav>Contact</Nav>
+      </NavModal>
+    </TopBar>
+  );
+});
+export default NavBar;
 const TopBar = styled.div`
+  transition: all 0.5s ease-out;
+  z-index: 1500;
+  box-shadow: none;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
   color: white;
   flex: 1 1 auto;
-  padding: 30px 3rem;
+  padding: 1rem 3rem;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
+  background-color: rgba(9, 11, 39, 0.5);
+  backdrop-filter: blur(10px);
+  &.shown {
+    transform: translateY(0px);
+  }
+  &.hidden {
+    transform: translateY(-94px);
+  }
 `;
 const Nav = styled(Button)`
   position: relative;
@@ -114,31 +155,3 @@ const NavModalToggle = styled(Button)`
     display: none;
   }
 `;
-const NavBar = () => {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  return (
-    <div>
-      <TopBar>
-        <Logo />
-        <NavWrapper>
-          <Nav>About</Nav>
-          <Nav>Experience</Nav>
-          <Nav>Work</Nav>
-          <Nav>Contact</Nav>
-        </NavWrapper>
-        <NavModalToggle variant="transparent" onClick={handleShow}>
-          <FontAwesomeIcon className="text-primary" icon={faBars} />
-        </NavModalToggle>
-        <NavModal className="hi" show={show} onHide={handleClose}>
-          <Nav>About</Nav>
-          <Nav>Experience</Nav>
-          <Nav>Work</Nav>
-          <Nav>Contact</Nav>
-        </NavModal>
-      </TopBar>
-    </div>
-  );
-};
-export default NavBar;
