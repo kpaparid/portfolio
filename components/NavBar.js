@@ -11,7 +11,7 @@ const NavBar = forwardRef((_, ref) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <TopBar ref={ref} className="show">
+    <TopBar ref={ref}>
       <Logo />
       <NavWrapper>
         <Nav>About</Nav>
@@ -34,14 +34,14 @@ const NavBar = forwardRef((_, ref) => {
 export default NavBar;
 const TopBar = styled.div`
   transition: all 0.5s ease-out;
-  z-index: 1500;
+  z-index: 500;
   box-shadow: none;
   position: sticky;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100vw;
   color: white;
-  flex: 1 1 auto;
+  position: fixed;
   padding: 1rem 3rem;
   display: flex;
   flex-wrap: nowrap;

@@ -27,10 +27,16 @@ export const projects = [
   },
   {
     id: nanoid(5),
-    title: "CardSchool",
+    title: "Papflix",
     subtitle: "Python, Qt",
-    imgs: ["/papflix-mash.png"],
+    imgs: ["/papflix1.png"],
     description:
       "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
   },
 ];
+export const links = {
+  linkedin: "https://www.linkedin.com/in/konstantinos-paparidis-6111541a6/",
+  github: "https://github.com/kpaparid",
+  mail: "kpaparid@gmail.com",
+  mailTo: "mailto:kpaparid@gmail.com",
+};

@@ -1,17 +1,17 @@
-import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faMessage } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { debounce, isEqual } from "lodash";
-import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Button } from "react-bootstrap";
+import { debounce } from "lodash";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import Scrollbars from "react-custom-scrollbars-2";
 import styledComponents from "styled-components";
+import { Swiper, SwiperSlide } from "swiper/react";
 import AboutMe from "../components/AboutMe";
 import Intro from "../components/Intro";
 import NavBar from "../components/NavBar";
 import PreLoader from "../components/Preloader";
 import Project from "../components/Project";
+import { Mousewheel } from "swiper";
 import SideColumns from "../components/SideColumns";
 import { projects } from "../data";
+import "swiper/css";
 
 export default function Home() {
   const itemsRef = useRef([]);
@@ -25,21 +25,13 @@ export default function Home() {
       if (y > e.target.scrollTop) {
         navRef.current.classList.add("shown");
         navRef.current.classList.remove("hidden");
-        // itemsRef.current[itemsRef.current.length -1 ].scrollIntoView({
-        //   behavior: "smooth",
-        //   block: "start",
-        // });
       } else if (y < e.target.scrollTop) {
         navRef.current.classList.remove("shown");
         navRef.current.classList.add("hidden");
-        // itemsRef.current[0].scrollIntoView({
-        //   behavior: "smooth",
-        //   block: "start",
-        // });
       }
       setY(e.target.scrollTop);
 
-      itemsRef.current.forEach((current) => {
+      itemsRef.current.map((current, index) => {
         var rect = current.getBoundingClientRect();
         var viewHeight = Math.max(
           document.documentElement.clientHeight,
@@ -49,13 +41,17 @@ export default function Home() {
           rect.bottom - viewHeight / 2 >= 0 &&
           rect.top + viewHeight / 2 - viewHeight < 0;
         if (viewable) {
-          itemsRef.current
-            .filter((i) => i !== current)
-            .map((i) => {
-              i.classList.remove("active");
-            });
-          current.classList.add("loaded");
+          itemsRef.current.map((i, iIndex) => {
+            i.classList.remove("active");
+            if (iIndex <= index) {
+              itemsRef.current[iIndex].classList.add("loaded");
+            }
+          });
           current.classList.add("active");
+          if (index === 1) {
+            itemsRef.current[2].classList.add("loaded");
+            itemsRef.current[2].classList.add("active");
+          }
         }
       });
     },
@@ -73,52 +69,70 @@ export default function Home() {
     };
   }, []);
   useEffect(() => {
-    itemsRef.current = itemsRef.current.slice(0, projects.length);
+    itemsRef.current = itemsRef.current.slice(0, projects.length + 7);
   }, [projects]);
 
   return (
-    <div
-      className="h-100"
-      style={{ overflow: "auto", zIndex: 900, position: "relative" }}
-      ref={ref}
-      onScroll={debouncedCallback}
-    >
-      {showLoader ? (
-        <PreLoader />
-      ) : (
-        <>
-          <SideColumns />
-          <NavBar ref={navRef} />
-          <Intro />
-          <AboutMe />
-          <ProjectsWrapper>
-            {projects?.map((p, index) => (
-              <Project
-                key={p.id}
-                {...p}
-                index={index + 1}
-                ref={(el) => (itemsRef.current[index] = el)}
-              />
-            ))}
-          </ProjectsWrapper>
-        </>
-      )}
+    <div className="h-100">
+      <Scrollbars
+        autoHide
+        autoHeight
+        autoHeightMax={"100%"}
+        className="h-100"
+        universal={true}
+        onScroll={handleScroll}
+        ref={ref}
+        renderThumbVertical={(props) => (
+          <div {...props} className="thumb-vertical" />
+        )}
+      >
+        {showLoader ? (
+          <PreLoader />
+        ) : (
+          <MainPage>
+            <NavBar ref={navRef} />
+            <Intro />
+            <AboutMe ref={(el) => (itemsRef.current[0] = el)} />
+            <Title
+              className="section-title"
+              ref={(el) => (itemsRef.current[1] = el)}
+            >
+              Projects
+            </Title>
+            <ProjectsWrapper>
+              {projects?.map((p, index) => (
+                <Project
+                  key={p.id}
+                  {...p}
+                  index={index + 1}
+                  ref={(el) => (itemsRef.current[index + 2] = el)}
+                />
+              ))}
+            </ProjectsWrapper>
+            <SideColumns ref={(el) => (itemsRef.current[7] = el)} />
+          </MainPage>
+        )}
+      </Scrollbars>
     </div>
   );
 }
+const MainPage = styledComponents.div`
+max-width: 1000px;
+width: 80%;
+margin: auto;
+.section-title{
+  font-size: clamp(26px,5vw,36px);
+}
+`;
 const ProjectsWrapper = styledComponents.div`
 height: 100%;
 width: 100%;
 display: flex;
-// justify-content: center;
 flex-direction: column;
 align-items:center;
 .left-side{
   padding: 0 4rem 0 0;
-}
-section{
-  width: 80% !important;
-  max-width: 1000px;
+  max-width: 60%;
 }
 section:nth-child(2n){
   .left-side{
@@ -134,15 +148,17 @@ section:nth-child(2n){
   }
 }
 @media (max-width: 768px){
-  section{
-  max-width: 100%;
-    padding: 3rem 0 !important;
+  .left-side{
+    max-width: 100%;
+  }
+  .right-side{
+    margin: 0 0.25rem !important;
   }
   section div:first-child{
     flex-direction: column;
     .left-side{
       width: 100%;
-      padding: 3rem 0;
+      padding: 0 0 3rem 0;
       order: 0 !important;
       div{
         justify-content:flex-start;
@@ -156,3 +172,26 @@ section:nth-child(2n){
   }
 }  
 }`;
+const Title = styledComponents.h1`
+
+    color: var(--bs-primary);
+    font-size: clamp(14px, 5vw, 25px);
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;    
+    transition: clip-path 1.25s ease-out;
+    clip-path: polygon(0% 0%,0% 0%,0% 100%,0% 100%);
+    &:before{
+      content: "";
+      border: 1px solid var(--bs-primary);
+      flex: 1 1 auto;
+      height: 1px;
+      margin-right: 0.5rem;
+      margin-top: 8px;
+    }
+  &.loaded{
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+  
+  `;

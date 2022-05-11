@@ -3,36 +3,39 @@ import Image from "next/image";
 import { forwardRef, memo } from "react";
 import styled from "styled-components";
 const Section = styled.section`
+  // min-height: 55vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0;
+  margin: 10px 0 80px;
   &.loaded .image-wrapper {
     animation: zoom-down 1.25s ease-out forwards;
+  }
+  .project-title {
+    font-size: clamp(24px, 5vw, 28px);
+    font-weight: 700;
+  }
+  h4 {
+    font-size: clamp(16px, 3vw, 20px);
   }
 `;
 
 const Project = forwardRef(
   ({ id, title, subtitle, description, index, imgs }, ref) => {
     return (
-      <Section
-        id={id}
-        ref={ref}
-        className="w-100 d-flex justify-content-center py-2 projects-section"
-        style={{
-          minHeight: "60%",
-        }}
-      >
-        <div className="pe-3">
+      <Section id={id} ref={ref} className="projects-section">
+        <div>
           <div className="d-flex">
-            <div
-              className="d-flex justify-content-between flex-column w-100 text-break text-wrap left-side d-flex"
-              style={{ maxWidth: "60%" }}
-            >
-              <h1>
+            <div className="d-flex justify-content-between flex-column w-100 text-break text-wrap left-side d-flex">
+              <h1 className="project-title">
                 <span>{title}</span>
               </h1>
               <h3>{subtitle}</h3>
               <h4>{description}</h4>
             </div>
             <div
-              className="flex-fill d-flex justify-content-end align-items-center right-side m-4"
+              className="flex-fill d-flex justify-content-end align-items-center right-side mx-1"
               style={{ position: "relative" }}
             >
               {imgs?.map((i, index) => (
@@ -53,7 +56,7 @@ const StyledImageWrapper = styled.div`
   aspect-ratio: 16/9;
   border-radius: 0.55rem;
   overflow: hidden;
-  z-index: 900;
+  z-index: 200;
   opacity: 0;
   box-shadow: 0px 0px 16px 6px var(--bs-primary);
 
@@ -91,12 +94,7 @@ const StyledImageWrapper = styled.div`
 const ImageComponent = memo(({ src, name = "Project" }) => {
   return (
     <StyledImageWrapper className="image-wrapper">
-      <Image
-        src={src}
-        alt={`Picture of the ${name}`}
-        layout="fill"
-        // objectFit="scale-down"
-      />
+      <Image src={src} alt={`Picture of the ${name}`} layout="fill" />
     </StyledImageWrapper>
   );
 });
