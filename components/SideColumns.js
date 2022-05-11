@@ -64,15 +64,33 @@ const SideColumns = memo(
 );
 
 const SidesWrapper = styledComponents.div`
-
-min-height: 55vh;
+@keyframes test {
+  from {
+    position: unset;
+    transform: translate(-55%, 200%);
+  }
+  to {
+    position: unset;
+    transform: none;
+  }
+}
+@keyframes display-none {
+  from {
+    display: none;
+  }
+  to {
+    display: none;
+  }
+}
+min-height: 10vh;
 @media (max-width: 768px){
   position: relative;
-  min-height: 30vh;
   .left-side{
     width: 100% !important;
     position: absolute;
     bottom:0;
+    width: 100% !important;
+    animation: test 0.55s ease-out forwards;
   }
   .right-side{
     display:none;
@@ -114,10 +132,13 @@ min-height: 55vh;
   position: relative;
   .left-side{
     width: 100% !important;
+    animation: test 0.55s ease-out forwards;
   }
   .right-side{
+    transition: all 0.75s ease-out;
     width: 0 !important;
     transform: translate(0, 100vh) !important;
+    animation: display-none 0.1s 0.75s ease-out forwards;
   }
   .icons-list{
       transform: rotate(90deg);
@@ -136,9 +157,6 @@ min-height: 55vh;
         background-color: var(--bs-primary);
       }
     }
-  }
-  .left-side{
-    transform: translate(-5%, -100%);
   }
   .left-side:after{
     position: absolute;

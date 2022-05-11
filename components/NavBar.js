@@ -22,7 +22,7 @@ const NavBar = forwardRef((_, ref) => {
       <NavModalToggle variant="transparent" onClick={handleShow}>
         <FontAwesomeIcon className="text-primary" icon={faBars} />
       </NavModalToggle>
-      <NavModal className="hi" show={show} onHide={handleClose}>
+      <NavModal show={show} onHide={handleClose}>
         <Nav>About</Nav>
         <Nav>Experience</Nav>
         <Nav>Work</Nav>

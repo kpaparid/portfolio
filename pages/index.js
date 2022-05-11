@@ -110,6 +110,7 @@ export default function Home() {
               ))}
             </ProjectsWrapper>
             <SideColumns ref={(el) => (itemsRef.current[7] = el)} />
+            <div style={{ height: "45vh" }}></div>
           </MainPage>
         )}
       </Scrollbars>
@@ -122,6 +123,7 @@ width: 80%;
 margin: auto;
 .section-title{
   font-size: clamp(26px,5vw,36px);
+  margin-bottom: 20px;
 }
 `;
 const ProjectsWrapper = styledComponents.div`
@@ -140,10 +142,10 @@ section:nth-child(2n){
     padding: 0 0 0 4rem;
     div{
       justify-content:flex-end;
-      align-items: end;
+      // align-items: end;
       display: flex;
       flex-direction: column;
-      text-align: end;
+      // text-align: end;
     }
   }
 }

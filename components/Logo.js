@@ -5,7 +5,10 @@ import { memo } from "react";
 
 const Logo = memo(({ animated, size = 1.2 }) => {
   return (
-    <div className={`logo ${animated ? "animated" : ""}`}>
+    <div
+      className={`logo ${animated ? "animated" : ""}`}
+      onClick={() => window.location.reload(false)}
+    >
       <div className="letter">
         <FontAwesomeIcon icon={faK}></FontAwesomeIcon>
       </div>

@@ -7,8 +7,7 @@ const Section = styled.section`
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 0.5rem 0;
-  margin: 10px 0 80px;
+  margin-bottom: 80px;
   &.loaded .image-wrapper {
     animation: zoom-down 1.25s ease-out forwards;
   }
@@ -32,7 +31,11 @@ const Project = forwardRef(
                 <span>{title}</span>
               </h1>
               <h3>{subtitle}</h3>
-              <h4>{description}</h4>
+              <h4>
+                {description.map((d, index) => (
+                  <div key={`line${index}`}>{d}</div>
+                ))}
+              </h4>
             </div>
             <div
               className="flex-fill d-flex justify-content-end align-items-center right-side mx-1"
