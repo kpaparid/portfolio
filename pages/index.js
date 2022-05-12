@@ -2,16 +2,13 @@ import { debounce } from "lodash";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Scrollbars from "react-custom-scrollbars-2";
 import styledComponents from "styled-components";
-import { Swiper, SwiperSlide } from "swiper/react";
 import AboutMe from "../components/AboutMe";
 import Intro from "../components/Intro";
 import NavBar from "../components/NavBar";
-import { Loader } from "../components/Preloader";
+import { Loader } from "../components/Loader";
 import Project from "../components/Project";
-import { Mousewheel } from "swiper";
 import SideColumns from "../components/SideColumns";
 import { projects } from "../data";
-import "swiper/css";
 
 export default function Home() {
   const itemsRef = useRef([]);
