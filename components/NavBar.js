@@ -5,7 +5,7 @@ import { Button, Modal } from "react-bootstrap";
 import styled from "styled-components";
 import Logo from "./Logo";
 
-const NavBar = forwardRef((_, ref) => {
+const NavBar = forwardRef(({ onClick }, ref) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -13,19 +13,17 @@ const NavBar = forwardRef((_, ref) => {
     <TopBar ref={ref}>
       <Logo />
       <NavWrapper>
-        <Nav>About</Nav>
-        <Nav>Experience</Nav>
-        <Nav>Work</Nav>
-        <Nav>Contact</Nav>
+        <Nav onClick={() => onClick(0)}>About</Nav>
+        <Nav onClick={() => onClick(1)}>Projects</Nav>
+        <Nav onClick={() => onClick(5)}>Contact</Nav>
       </NavWrapper>
       <NavModalToggle variant="transparent" onClick={handleShow}>
         <FontAwesomeIcon className="text-primary" icon={faBars} />
       </NavModalToggle>
       <NavModal show={show} onHide={handleClose}>
-        <Nav>About</Nav>
-        <Nav>Experience</Nav>
-        <Nav>Work</Nav>
-        <Nav>Contact</Nav>
+        <Nav onClick={() => onClick(0)}>About</Nav>
+        <Nav onClick={() => onClick(1)}>Projects</Nav>
+        <Nav onClick={() => onClick(5)}>Contact</Nav>
       </NavModal>
     </TopBar>
   );
@@ -68,7 +66,8 @@ const Nav = styled(Button)`
   color: var(--bs-senary);
   border-radius: 0;
   border-bottom: 1px solid transparent;
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: transparent !important;
     color: var(--bs-primary);
   }

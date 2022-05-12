@@ -17,6 +17,13 @@ export default function Home() {
   const [showLoader, setShowLoader] = useState(true);
   const [y, setY] = useState(0);
 
+  const handleNavClick = useCallback((index) => {
+    itemsRef.current[index].scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
+  }, []);
   const handleScroll = useCallback(
     (e) => {
       if (y > e.target.scrollTop) {
@@ -87,7 +94,7 @@ export default function Home() {
           <Loader />
         ) : (
           <MainPage>
-            <NavBar ref={navRef} />
+            <NavBar ref={navRef} onClick={handleNavClick} />
             <Intro />
             <AboutMe ref={(el) => (itemsRef.current[0] = el)} />
             <Title
