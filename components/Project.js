@@ -26,7 +26,7 @@ const Project = forwardRef(
       <Section id={id} ref={ref} className="projects-section">
         <div>
           <div className="d-flex">
-            <div className="d-flex justify-content-between flex-column w-100 text-break text-wrap left-side d-flex">
+            <div className="d-flex justify-content-center flex-column w-100 text-break text-wrap left-side d-flex">
               <h1 className="project-title">
                 <span>{title}</span>
               </h1>
@@ -42,7 +42,7 @@ const Project = forwardRef(
               style={{ position: "relative" }}
             >
               {imgs?.map((i, index) => (
-                <ImageComponent src={"/papi.gif"} key={"image-" + index} />
+                <ImageComponent src={i} key={"image-" + index} />
               ))}
             </div>
           </div>
