@@ -32,7 +32,7 @@ export const projects = [
     id: nanoid(5),
     title: "CardSchool",
     subtitle: "Java, Android",
-    // imgs: ["/papflix1.png"],
+    imgs: ["/cardschool.gif"],
     description: [
       "CardSchool is a german learning android app. The three practice modes allow the users to challenge and improve their German vocabulary",
       "The three main modes are:",
