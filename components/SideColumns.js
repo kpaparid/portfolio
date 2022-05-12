@@ -34,29 +34,6 @@ const SideColumns = memo(
             {links.mail}
           </a>
         </Side>
-        {/* <div className=" d-md-none d-flex flex-nowrap text-senary icons-list w-100 justify-content-center">
-          <Button
-            variant="senary"
-            style={{ height: "40px", width: "40px" }}
-            className="rounded-circle mx-2 p-2"
-          >
-            <FontAwesomeIcon icon={faLinkedinIn} />
-          </Button>
-          <Button
-            variant="senary"
-            style={{ height: "40px", width: "40px" }}
-            className="rounded-circle mx-2 p-2"
-          >
-            <FontAwesomeIcon icon={faGithub} />
-          </Button>
-          <Button
-            variant="senary"
-            style={{ height: "40px", width: "40px" }}
-            className="rounded-circle mx-2 p-2"
-          >
-            <FontAwesomeIcon icon={faEnvelope} />
-          </Button>
-        </div> */}
       </SidesWrapper>
     );
   }),
@@ -64,6 +41,8 @@ const SideColumns = memo(
 );
 
 const SidesWrapper = styledComponents.div`
+opacity: 0;
+animation: appear 0.5s ease-out forwards; 
 @keyframes test {
   from {
     position: unset;
