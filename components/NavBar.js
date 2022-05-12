@@ -123,6 +123,7 @@ const NavModal = styled(Modal)`
       align-items: center;
     }
     button {
+      animation: appear 0.45s ease-out forwards;
       font-size: clamp(16px, 6vw, 25px);
       color: var(--bs-senary);
       padding: 0.5rem 0 0.5rem 0;
