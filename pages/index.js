@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import AboutMe from "../components/AboutMe";
 import Intro from "../components/Intro";
 import NavBar from "../components/NavBar";
-import PreLoader from "../components/Preloader";
+import { Loader } from "../components/Preloader";
 import Project from "../components/Project";
 import { Mousewheel } from "swiper";
 import SideColumns from "../components/SideColumns";
@@ -87,7 +87,7 @@ export default function Home() {
         )}
       >
         {showLoader ? (
-          <PreLoader />
+          <Loader />
         ) : (
           <MainPage>
             <NavBar ref={navRef} />
