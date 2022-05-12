@@ -1,13 +1,14 @@
 {
   "private": true,
   "scripts": {
+    "replaceFilePaths": "node replacer.js",
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export -o build && npm run replaceFilePaths",
     "start": "next start",
+    "export": "next export -o build && npm run replaceFilePaths",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://kpaparid.github.io",
   "dependencies": {
     "-": "^0.0.1",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
@@ -20,6 +21,7 @@
     "lodash": "^4.17.21",
     "nanoid": "^3.3.4",
     "next": "latest",
+    "next-optimized-images": "^2.6.2",
     "react": "17.0.2",
     "react-bootstrap": "^2.3.1",
     "react-custom-scrollbars-2": "^4.4.0",

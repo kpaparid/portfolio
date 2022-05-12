@@ -1,10 +1,9 @@
-import styled from "styled-components";
-import { faBars, faK, faLinesLeaning } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Logo from "./Logo";
-import PreLoader from "./Preloader";
-import { Button, Dropdown, Modal } from "react-bootstrap";
 import { forwardRef, useState } from "react";
+import { Button, Modal } from "react-bootstrap";
+import styled from "styled-components";
+import Logo from "./Logo";
 
 const NavBar = forwardRef((_, ref) => {
   const [show, setShow] = useState(false);

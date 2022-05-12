@@ -1,5 +1,5 @@
 import { isEqual } from "lodash";
-import { memo, useEffect, useState } from "react";
+import { memo } from "react";
 import Logo from "./Logo";
 
 const PreLoader = memo(() => {
