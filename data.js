@@ -3,6 +3,7 @@ import { nanoid } from "nanoid";
 export const projects = [
   {
     id: nanoid(5),
+    link: "https://github.com/kpaparid/canteen-frontend",
     title: "Canteen",
     subtitle: "React, Redux, Express",
     imgs: ["/canteen.gif"],
@@ -12,6 +13,7 @@ export const projects = [
   },
   {
     id: nanoid(5),
+    link: "https://github.com/kpaparid/beton-transporter-frontend",
     title: "Beton Transporter",
     subtitle: "React, Redux, Spring Boot",
     imgs: ["/beton-transporter.gif"],
@@ -21,6 +23,7 @@ export const projects = [
   },
   {
     id: nanoid(5),
+    link: "https://github.com/kpaparid/papflix",
     title: "Papflix",
     subtitle: "Python, Qt",
     imgs: ["/papflix.gif"],
@@ -30,6 +33,7 @@ export const projects = [
   },
   {
     id: nanoid(5),
+    link: "https://github.com/kpaparid/card-school",
     title: "CardSchool",
     subtitle: "Java, Android",
     imgs: ["/cardschool.gif"],

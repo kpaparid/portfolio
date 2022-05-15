@@ -21,14 +21,16 @@ const Section = styled.section`
 `;
 
 const Project = forwardRef(
-  ({ id, title, subtitle, description, index, imgs }, ref) => {
+  ({ id, title, subtitle, description, index, imgs, link }, ref) => {
     return (
       <Section id={id} ref={ref} className="projects-section">
         <div>
           <div className="d-flex">
             <div className="d-flex justify-content-center flex-column w-100 text-break text-wrap left-side d-flex">
               <h1 className="project-title">
-                <span>{title}</span>
+                <a href={link} target="_blank">
+                  {title}
+                </a>
               </h1>
               <h3>{subtitle}</h3>
               <h4>
