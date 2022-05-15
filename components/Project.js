@@ -44,7 +44,7 @@ const Project = forwardRef(
               style={{ position: "relative" }}
             >
               {imgs?.map((i, index) => (
-                <ImageComponent src={i} key={"image-" + index} />
+                <ImageComponent src={i} key={"image-" + index} link={link} />
               ))}
             </div>
           </div>
@@ -96,10 +96,12 @@ const StyledImageWrapper = styled.div`
     }
   }
 `;
-const ImageComponent = memo(({ src, name = "Project" }) => {
+const ImageComponent = memo(({ src, name = "Project", link }) => {
   return (
     <StyledImageWrapper className="image-wrapper">
-      <Image src={src} alt={`Picture of the ${name}`} layout="fill" />
+      <a href={link} target="_blank" className="h-100 w-100">
+        <Image src={src} alt={`Picture of the ${name}`} layout="fill" />
+      </a>
     </StyledImageWrapper>
   );
 });
