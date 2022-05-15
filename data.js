@@ -7,7 +7,7 @@ export const projects = [
     subtitle: "React, Redux, Express",
     imgs: ["/canteen.gif"],
     description: [
-      "Canteen is a fullstack online food ordering platform used in businesses where they use a takeaway ordering system. It provides the business with a frontpage for their menu where the customers can then place their order. The admins can then track the current orders through the admin dashboard.",
+      "Canteen is a fullstack online food ordering platform used in businesses where they use a takeout ordering system. It provides the company with a home page for their menu, where customers can then place their orders. The admins can then track the current orders from the admin dashboard and notify them when they are ready.",
     ],
   },
   {
@@ -16,7 +16,7 @@ export const projects = [
     subtitle: "React, Redux, Spring Boot",
     imgs: ["/beton-transporter.gif"],
     description: [
-      "Beton Transporter is a full stack web platform used by concrete companies in order to collect and manage data from their drivers. It also provides a vacations planner and a messenger.",
+      "Beton Transporter is a full stack web platform used by concrete companies to collect and manage data from their drivers. It also offers a vacation planner and a messenger.",
     ],
   },
   {
@@ -25,7 +25,7 @@ export const projects = [
     subtitle: "Python, Qt",
     imgs: ["/papflix.gif"],
     description: [
-      "Papflix is a python software to organize your movie and TV series collection on PC. The best part of this movie organizer software is that as it can extract information about all your movies from the Internet at once.",
+      "Papflix is ​​a Python software for organizing your movie and TV series collection on PC. The best thing about this movie management software is that it can extract information about all your movies from the internet at once.",
     ],
   },
   {
@@ -34,11 +34,11 @@ export const projects = [
     subtitle: "Java, Android",
     imgs: ["/cardschool.gif"],
     description: [
-      "CardSchool is a german learning android app. The three practice modes allow the users to challenge and improve their German vocabulary",
+      "CardSchool is a german learning android app. The three practice modes allow the users to challenge and improve their German vocabulary.",
       "The three main modes are:",
-      "- Flashcard learning",
-      "- Article Learning",
-      "- Four word quiz",
+      "- Flashcards",
+      "- Articles",
+      "- Quiz",
     ],
   },
 ];

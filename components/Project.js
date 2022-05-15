@@ -57,12 +57,12 @@ const StyledImageWrapper = styled.div`
   position: relative;
   width: 100%;
   aspect-ratio: 16/9;
-  border-radius: 0.55rem;
+  // border-radius: 0.55rem;
   overflow: hidden;
-  z-index: 200;
+  z-index: 400;
   opacity: 0;
   box-shadow: 0px 0px 16px 6px var(--bs-primary);
-
+  // border: 0.5px solid var(--bs-primary);
   img {
     width: 100%;
     height: 100%;
