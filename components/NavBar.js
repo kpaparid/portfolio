@@ -31,7 +31,7 @@ const NavBar = forwardRef(({ onClick }, ref) => {
 export default NavBar;
 const TopBar = styled.div`
   transition: all 0.5s ease-out;
-  z-index: 500;
+  z-index: 100;
   box-shadow: none;
   position: sticky;
   top: 0;
