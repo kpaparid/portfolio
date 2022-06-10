@@ -13,8 +13,8 @@ const AboutMe = memo(
             develop web applications, mobile applications, and desktop
             applications. My core skill is based on JavaScript and Java. I have
             graduated with a bachelor's degree in Computer Science from
-            Aristotle University at Thessaloniki, Greece in 2016. I am available
-            for any kind of job opportunity that suits my interests.
+            Aristotle University at Thessaloniki, Greece in 2016. Let's work
+            together!
           </h5>
         </div>
       </Wrapper>
