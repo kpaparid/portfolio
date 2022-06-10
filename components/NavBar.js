@@ -30,6 +30,11 @@ const NavBar = forwardRef(({ onClick }, ref) => {
 });
 export default NavBar;
 const TopBar = styled.div`
+  .logo {
+    transform: translateY(-25px);
+    opacity: 0;
+    animation: slideDown 0.5s linear forwards;
+  }
   transition: all 0.5s ease-out;
   z-index: 900;
   box-shadow: none;
@@ -58,13 +63,14 @@ const Nav = styled(Button)`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 1rem;
+  padding: 1rem;
   border: 0;
   opacity: 0;
   background-color: transparent;
   box-shadow: none;
   color: var(--bs-senary);
   border-radius: 0;
+  border-0;
   border-bottom: 1px solid transparent;
   &:hover,
   &:focus {
@@ -126,7 +132,7 @@ const NavModal = styled(Modal)`
       animation: appear 0.45s ease-out forwards;
       font-size: clamp(16px, 6vw, 25px);
       color: var(--bs-senary);
-      padding: 0.5rem 0 0.5rem 0;
+      padding: 0.35rem 1rem;
       margin: 0.5rem 0;
       text-align: center;
       border-bottom: 1px solid transparent;
@@ -147,6 +153,12 @@ const NavModalToggle = styled(Button)`
   height: 100%;
   padding: 1 0.5rem !important;
   border: 2px solid transparent;
+  transform: translateY(-25px);
+  animation: slideDown 0.5s linear forwards;
+  opacity: 0;
+  &:focus {
+    box-shadow: none;
+  }
   &:hover {
     border-color: var(--bs-primary);
   }
