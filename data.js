@@ -52,10 +52,10 @@ export const projects = [
       <div className="pt-2">The main activities are: </div>,
       <ul>
         <li className="pb-2 fw-bold">
-          Flashcards (memory challenge, autoplay text-to-speech mode included)
+          Flashcards (memory challenge, autoplay text-to-speech mode included).
         </li>
-        <li className="pb-2 fw-bold">Article (find the right article)</li>
-        <li className="pb-2 fw-bold">Quiz (find the correct translation)</li>
+        <li className="pb-2 fw-bold">Article (find the right article).</li>
+        <li className="pb-2 fw-bold">Quiz (find the correct translation).</li>
       </ul>,
       "Apart from the three activities, it provides the user with an import feature to integrate single and multiple words, or even edit them on the go. The imported words will be translated automatically. If the user has doubts about the translation, they can always navigate to the word's Wiktionary link via an embedded browser.",
     ],
