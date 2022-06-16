@@ -1,6 +1,5 @@
 import { debounce } from "lodash";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import Scrollbars from "react-custom-scrollbars-2";
 import styledComponents from "styled-components";
 import AboutMe from "../components/AboutMe";
 import Intro from "../components/Intro";
@@ -78,18 +77,7 @@ export default function Home() {
 
   return (
     <div className="h-100">
-      <Scrollbars
-        autoHide
-        autoHeight
-        autoHeightMax={"100%"}
-        className="h-100"
-        universal={true}
-        onScroll={handleScroll}
-        ref={ref}
-        renderThumbVertical={(props) => (
-          <div {...props} className="thumb-vertical" />
-        )}
-      >
+      <OverflowWrapper onScroll={handleScroll} ref={ref}>
         {showLoader ? (
           <Loader />
         ) : (
@@ -117,11 +105,31 @@ export default function Home() {
             <div style={{ height: "45vh" }}></div>
           </MainPage>
         )}
-      </Scrollbars>
+      </OverflowWrapper>
     </div>
   );
 }
+
+const OverflowWrapper = styledComponents.div`
+  overflow: auto;
+  height: 100%;
+  &::-webkit-scrollbar-thumb {
+    background-color: #ff9921;
+    border: 3px solid var(--bs-secondary);
+    border-radius: 3px;
+  }
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  scrollbar-color: #ff9921 #ff992100;
+  scrollbar-width: thin;
+`;
+
 const MainPage = styledComponents.div`
+
+-webkit-scrollbar {
+  width: 50px;
+}
 max-width: 1000px;
 width: 80%;
 margin: auto;

@@ -61,15 +61,18 @@ const StyledImageWrapper = styled.div`
   aspect-ratio: 16/9;
   // border-radius: 0.55rem;
   overflow: hidden;
-  z-index: 200;
+  z-index: 150;
   opacity: 0;
   box-shadow: 0px 0px 16px 6px var(--bs-primary);
   // border: 0.5px solid var(--bs-primary);
   img {
     width: 100%;
     height: 100%;
-    position: relative !important;
+    // position: relative !important;
     object-fit: cover;
+  }
+  a {
+    position: absolute;
   }
 
   @keyframes zoom-down {

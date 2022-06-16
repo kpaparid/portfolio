@@ -30,18 +30,20 @@ const NavBar = forwardRef(({ onClick }, ref) => {
 });
 export default NavBar;
 const TopBar = styled.div`
+  position: relative;
+
   .logo {
     transform: translateY(-25px);
     opacity: 0;
     animation: slideDown 0.5s linear forwards;
   }
   transition: all 0.5s ease-out;
-  z-index: 300;
+  z-index: 500;
   box-shadow: none;
   position: sticky;
   top: 0;
   left: 0;
-  width: 100vw;
+  right: 8px;
   color: white;
   position: fixed;
   padding: 1rem 3rem;
@@ -49,8 +51,13 @@ const TopBar = styled.div`
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(9, 11, 39, 0.5);
+  background-color: rgba(9, 11, 39, 0.85);
   backdrop-filter: blur(10px);
+  @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    background-color: rgba(9, 11, 39, 0.5);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
   &.shown {
     transform: translateY(0px);
   }
