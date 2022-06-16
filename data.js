@@ -7,6 +7,7 @@ export const projects = [
     title: "Canteen",
     subtitle: "Next, Redux, Express, Socket.IO",
     imgs: ["/canteen.gif"],
+    placeholder: "/canteen.png",
     description: [
       "Canteen is a fullstack online food ordering platform. It consists of two pages.",
       <ul className="pt-2">
@@ -27,6 +28,7 @@ export const projects = [
     title: "Beton Transporter",
     subtitle: "React, Redux, Spring Boot, STOMP",
     imgs: ["/beton-transporter.gif"],
+    placeholder: "/beton-transporter.png",
     description: [
       "Beton Transporter is a full stack web platform used by concrete-selling companies to collect and manage data from their drivers.",
     ],
@@ -37,6 +39,7 @@ export const projects = [
     title: "Papflix",
     subtitle: "Python, Qt, Sqlite",
     imgs: ["/papflix.gif"],
+    placeholder: "/papflix.png",
     description: [
       "Papflix is a movie organizer software made in Python. Provides automatic integration of the films, as well as additional information about them (eg poster, cast, rating, etc.). The correct matching of the films in relation to the file name of each film is achieved through two similarity algorithms.",
     ],
@@ -47,6 +50,7 @@ export const projects = [
     title: "CardSchool",
     subtitle: "Java, Android",
     imgs: ["/cardschool.gif"],
+    placeholder: "/cardschool.png",
     description: [
       "CardSchool is a german learning android application made in Java and Android Studio.",
       <div className="pt-2">The main activities are: </div>,

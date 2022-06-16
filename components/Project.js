@@ -21,7 +21,7 @@ const Section = styled.section`
 `;
 
 const Project = forwardRef(
-  ({ id, title, subtitle, description, index, imgs, link }, ref) => {
+  ({ id, title, subtitle, description, placeholder, imgs, link }, ref) => {
     return (
       <Section id={id} ref={ref} className="projects-section">
         <div>
@@ -35,7 +35,7 @@ const Project = forwardRef(
               <h3>{subtitle}</h3>
               <h4>
                 {description.map((d, index) => (
-                  <div key={`line${index}`}>{d}</div>
+                  <div key={`${title}-line-${index}`}>{d}</div>
                 ))}
               </h4>
             </div>
@@ -44,7 +44,13 @@ const Project = forwardRef(
               style={{ position: "relative" }}
             >
               {imgs?.map((i, index) => (
-                <ImageComponent src={i} key={"image-" + index} link={link} />
+                <ImageComponent
+                  src={i}
+                  key={`${title}-image-${index}`}
+                  link={link}
+                  name={title}
+                  placeholder={placeholder}
+                />
               ))}
             </div>
           </div>
@@ -99,11 +105,17 @@ const StyledImageWrapper = styled.div`
     }
   }
 `;
-const ImageComponent = memo(({ src, name = "Project", link }) => {
+const ImageComponent = memo(({ src, name = "Project", placeholder, link }) => {
   return (
     <StyledImageWrapper className="image-wrapper">
       <a href={link} target="_blank" className="h-100 w-100">
-        <Image src={src} alt={`Picture of the ${name}`} layout="fill" />
+        <Image
+          placeholder="blur"
+          blurDataURL={placeholder}
+          src={src}
+          alt={`Picture of the ${name}`}
+          layout="fill"
+        />
       </a>
     </StyledImageWrapper>
   );
