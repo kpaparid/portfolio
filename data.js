@@ -35,7 +35,7 @@ export const projects = [
     id: nanoid(5),
     link: "https://github.com/kpaparid/papflix",
     title: "Papflix",
-    subtitle: "Python, Qt",
+    subtitle: "Python, Qt, Sqlite",
     imgs: ["/papflix.gif"],
     description: [
       "Papflix is a movie organizer software made in Python. Provides automatic integration of the films, as well as additional information about them (eg poster, cast, rating, etc.). The correct matching of the films in relation to the file name of each film is achieved through two similarity algorithms.",
