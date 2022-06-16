@@ -36,7 +36,7 @@ const TopBar = styled.div`
     animation: slideDown 0.5s linear forwards;
   }
   transition: all 0.5s ease-out;
-  z-index: 900;
+  z-index: 300;
   box-shadow: none;
   position: sticky;
   top: 0;
