@@ -115,7 +115,7 @@ const OverflowWrapper = styledComponents.div`
   height: 100%;
   &::-webkit-scrollbar-thumb {
     background-color: #ff9921;
-    border: 3px solid var(--bs-secondary);
+    border: 2px solid var(--bs-secondary);
     border-radius: 3px;
   }
   &::-webkit-scrollbar {
