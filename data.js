@@ -28,7 +28,7 @@ export const projects = [
     subtitle: "React, Redux, Spring Boot, STOMP",
     imgs: ["/beton-transporter.gif"],
     description: [
-      "Beton Transporter is a full stack web platform used by concrete companies to collect and manage data from their drivers. It also offers a vacation planner and a messenger.",
+      "Beton Transporter is a full stack web platform used by concrete-selling companies to collect and manage data from their drivers.",
     ],
   },
   {
