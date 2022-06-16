@@ -47,7 +47,8 @@ const Wrapper = styledComponents.section`
     align-items: center;
     &:after{
       content: "";
-      border: 1px solid var(--bs-primary);
+      // border: 1px solid var(--bs-primary);
+      background-color: var(--bs-primary);
       flex: 1 1 auto;
       height: 1px;
       margin-left: 0.5rem;
