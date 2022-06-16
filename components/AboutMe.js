@@ -9,12 +9,12 @@ const AboutMe = memo(
         <div className="intro-body">
           <h1 className="section-title">About Me</h1>
           <h5>
-            Hello! I'm Konstantinos Paparidis, a passionate software engineer. I
-            develop web applications, mobile applications, and desktop
-            applications. My core skill is based on JavaScript and Java. I have
-            graduated with a bachelor's degree in Computer Science from
-            Aristotle University at Thessaloniki, Greece in 2016. Let's work
-            together!
+            Hello! I'm Konstantinos Paparidis, a passionate software engineer.
+            Experienced on developing web, mobile, and desktop applications and
+            specialized in frontend and backend development. I have graduated
+            with a bachelor's degree in Computer Science from Aristotle
+            University at Thessaloniki, Greece. Looking forward to working with
+            you!
           </h5>
         </div>
       </Wrapper>
