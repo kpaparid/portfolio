@@ -1,4 +1,4 @@
-# Canteen (Work in Progress)
+# Portfolio
 
 Personal Website made in Next.
 
